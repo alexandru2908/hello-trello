@@ -1,5 +1,5 @@
 # App link
-https://hello-trello-alexandru2908s-projects.vercel.app/
+https://hello-trello.vercel.app/
 
 ## Analytics and Metrics
 
