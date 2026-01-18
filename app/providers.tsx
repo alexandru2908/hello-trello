@@ -15,5 +15,10 @@ if (typeof window !== 'undefined') {
 }
 
 export function CSPostHogProvider({ children }: { children: React.ReactNode }) {
-    return <PostHogProvider client={posthog}>{children}</PostHogProvider>
+    // Only use PostHogProvider if PostHog is initialized
+    if (typeof window !== 'undefined' && posthog.__loaded) {
+      return <PostHogProvider client={posthog}>{children}</PostHogProvider>
+    }
+    // Return children without provider if PostHog is not configured
+    return <>{children}</>
 }
